@@ -1,9 +1,10 @@
-.nanbar{
+.navbar{
 display: flex;
 align-items:  center;
 justify-content: space-between;
 margin: 20px;
 margin-left: 470px;
+margin-bottom: -7%;
 }
 .nav-menu{
 display: flex;
