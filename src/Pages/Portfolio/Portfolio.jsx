@@ -3,7 +3,7 @@ import Amazone from '../../assets/Amazon.png'
 import Evangadi from '../../assets/Enangadi-forum.jpg'
 import Netflix from '../../assets/netflix.png'
 import ProjectCard from '../../common/ProjectCard'
-import Apple from '../../assets/apple.png'
+
 import './portfolio.css'
 
 const Portfolio = () => {
