@@ -2,7 +2,7 @@ import checkMarkIconDark from "../../assets/checkmark-dark.svg";
 import checkLight from "../../assets/checkmark-light.svg";
 import { useTheme } from "../../common/useTheme";
 import SkillList from "../../common/SkillList";
-import "./About.css";
+import "./about.css";
 
 const About = () => {
   const { theme} = useTheme();
