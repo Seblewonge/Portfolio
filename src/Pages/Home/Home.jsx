@@ -1,4 +1,4 @@
-import heroimg from "../../assets/heroimg.png";
+import heroimg from "../../assets/heroImg.png";
 import sun from '../../assets/sun.svg'
 import whatsappLight from '../../assets/whatsapp-light.svg'
 import whatsappDark from "../../assets/whatsapp-dark.svg";
