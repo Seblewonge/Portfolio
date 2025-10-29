@@ -131,6 +131,26 @@ input[type="submit"]:active {
   transform: translateY(2px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: fadeInOut 3s ease forwards;
+  z-index: 1000;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
 
 /* --- RESPONSIVE DESIGN --- */
 

@@ -1,5 +1,3 @@
-import React from "react";
-// import "./contact.css";
 import './contact.css'
 import callDarkIcon from "../../assets/call-dark.png";
 import callLightIcon from "../../assets/call-light.png";
@@ -8,12 +6,45 @@ import emailLightIcon from "../../assets/mail-light.png";
 import locationDarkIcon from "../../assets/location-dark.png";
 import locationLightkIcon from "../../assets/location-light.png";
 import { useTheme } from "../../common/useTheme";
+import  { useRef , useState} from "react";
+import emailjs from "@emailjs/browser"; 
 
 const Contact = () => {
   const { theme } = useTheme();
   const callIcon = theme === "light" ? callLightIcon : callDarkIcon;
   const mailIcon = theme === "light" ? emailLightIcon : emailDarkIcon;
   const locIcon = theme === "light" ? locationLightkIcon : locationDarkIcon;
+
+const form = useRef();
+const [showPopup, setShowPopup] = useState(false);
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_g0s2m6c", 
+      "template_zb65kbe", 
+      form.current,
+      "wYkEARJ5D6_edOJa_" 
+    )
+    .then(
+      (result) => {
+        console.log("SUCCESS!", result.text);
+        setShowPopup(true);
+        form.current.reset(); 
+
+        // hide popup automatically after 3 seconds
+        setTimeout(() => {
+          setShowPopup(false);
+        }, 1000);
+      },
+      (error) => {
+        console.log("FAILED...", error.text);
+        alert("Something went wrong. Please try again later.");
+      }
+    );
+};
 
   return (
     <section id="contact" className="Contact_container">
@@ -39,45 +70,45 @@ const Contact = () => {
             </div>
           </div>
         </div>
-       
-        <form action="" className="contac-right">
+
+        <form ref={form} onSubmit={sendEmail} className="contac-right">
           {/* <div className="formGroup"> */}
-            <label htmlFor="" >
-              Your Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Enter your name"
-              required
-            />
+          <label>Your Name</label>
+          <input
+            type="text"
+            name="from_name"
+            id="name"
+            placeholder="Enter your name"
+            required
+          />
           {/* </div> */}
           {/* <div className="formGroup"> */}
-            <label htmlFor="" >
-              Your Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email"
-              required
-            />
+          <label>Your Email</label>
+          <input
+            type="email"
+            name="from_email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
           {/* </div> */}
           {/* <div className="formGroup"> */}
-            <label htmlFor="message" >
-              Write your Message
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              placeholder=" Enter your message"
-              required
-            ></textarea>
+          <label>Write your Message</label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder=" Enter your message"
+            required
+          ></textarea>
           {/* </div> */}
-          <input className="hover btn" type="submit" value="Submit" />
+          <input className="hover btn" type="submit" value="Send" />
         </form>
+        {/* {statusMessage && <p className="status">{statusMessage}</p>} */}
+        {showPopup && (
+          <div className="popup">
+            <p> Message sent successfully!</p>
+          </div>
+        )}
       </div>
     </section>
   );
