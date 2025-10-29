@@ -59,14 +59,21 @@ margin-bottom: -7%;
 
 .colorModeContainer {
   position: relative;
+  z-index: 10;
 }
 
-.colorMode {
-  position: absolute;
+/* .colorMode {
+  position: fixed;
   right: 0;
   width: 25px;
+} */
+.colorMode {
+  position: fixed;
+  right: 40px;
+  top: 90px; 
+  width: 25px;
+  z-index: 20; 
 }
-
 .colorMode:hover {
   cursor: pointer;
 }
@@ -91,14 +98,16 @@ margin-bottom: -7%;
       max-width: 350px;
       width: 350px;
     }
+
   }
 }
 
 @media (width >= 1400px) {
   .hero_container {
     .hero {
-      max-width: 400px;
+      max-width: 600px;
       width: 400px;
     }
+
   }
 }

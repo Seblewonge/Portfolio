@@ -1,137 +1,190 @@
+/* --- GENERAL CONTAINER --- */
+body{
+margin: 0%;
+}
 .Contact_container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
-margin-bottom: -7%;
-/* margin-top: -5%; */
-}
-.contact-section{
-margin-top: auto;
-display: flex;
-align-items: flex-start;
-gap: 110px;
-}
-.contact-left{
-display:  flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 30px;
+  padding: 60px 5%;
+  color: var(--text-color);
 }
 
-.contact-left p{
-max-width: 550px;
-font-size: 20px;
-line-height: 35px;
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 100px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* --- LEFT SIDE (TEXT + INFO) --- */
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.contact-left h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.contact-left p {
+  font-size: 18px;
+  line-height: 1.7;
   text-align: justify;
-justify-content: center;
-padding-left: 10%;
-}
-.contact-details{
-display: flex;
-flex-direction: column;
-gap: 30px;
-font-size: 22px;
-}
-.contact-detail{
-display: flex;
-align-items: center;
-gap: 20px;
-}
-img{
-width: 30px;
-}
-.call{
-width: 50px;
-
-}
-.contac-right{
-display: flex;
-flex-direction: column;
-align-items: start;
-gap: 30px;
-
-
-}
-.contac-right label{
-color:  var(--form-text-color); 
-font-size: 22px;
-font-weight: 500;
-text-align: left;
-
-
-}
-form {
-  display: flex; 
-   flex-direction: column;
-  /* gap: 30px; */
-
+  color: var(--text-color);
 }
 
-textarea,
-input:not([type='submit']) {
-  height: 50px;
-  padding-left: 16px;
-  width: 200px;
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 18px;
 }
 
-textarea {
-  padding-top: 16px;
-  resize: none;
-  height: 250px;
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-input,
-textarea {
-  border-radius: 20px;
-  border: #888 1px solid;
-  box-sizing: border-box;
-  justify-self: center;
+.contact-detail img {
+  width: 30px;
+  height: 30px;
+}
+
+/* --- RIGHT SIDE (FORM) --- */
+.contac-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.contac-right label {
+  color: var(--form-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #888;
   background-color: var(--background-color);
   color: var(--form-text-color);
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 180px;
+  resize: none;
 }
 
 ::placeholder {
   color: var(--form-text-color);
+  opacity: 0.8;
 }
 
-input[type='submit'] {
+/* --- SUBMIT BUTTON --- */
+input[type="submit"] {
   background-color: var(--btn-color);
   color: var(--btn-text-color);
   border: none;
-  border-radius: 20px;
-  width: 126px;
+ 
+  width: 150px;
   height: 50px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-  margin: auto;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.2s ease-in-out;
 }
 
-input[type='submit']:hover {
+input[type="submit"]:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
-input[type='submit']:active {
+input[type="submit"]:active {
   transform: translateY(2px);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-@media (width >= 800px) {
-  textarea,
-  input:not([type='submit']) {
-    width: 600px;
-    font-size: 20px;
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablet and smaller screens */
+@media (max-width: 900px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
   }
+
+  .contact-left,
+  .contac-right {
+    width: 80%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-left p {
+    text-align: center;
+  }
+
   form {
-    gap: 40px;
+    width: 100%;
+    align-items: center;
+  }
+
+  form input,
+  form textarea {
+    width: 90%;
   }
 }
 
-@media (width >= 1400px) {
-  textarea,
-  input:not([type='submit']) {
-    width: 800px;
+/* Phones */
+@media (max-width: 600px) {
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .contact-left h1 {
+    font-size: 26px;
+  }
+
+  .contact-left p {
+    font-size: 16px;
+  }
+
+  .contact-detail p {
+    font-size: 16px;
+  }
+
+  input[type="submit"] {
+    width: 130px;
+    height: 45px;
+    font-size: 16px;
   }
 }

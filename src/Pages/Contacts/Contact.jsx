@@ -1,5 +1,6 @@
 import React from "react";
-import "./contact.css";
+// import "./contact.css";
+import './contact.css'
 import callDarkIcon from "../../assets/call-dark.png";
 import callLightIcon from "../../assets/call-light.png";
 import emailDarkIcon from "../../assets/mail-dark.png";

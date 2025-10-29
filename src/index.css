@@ -1,9 +1,14 @@
-*{
+/* *{
 margin: 0;
 padding: 0;
 }
-body{
-height: 100vh;
-/* background: black; */
-/* color: white; */
+
+html {
+  scroll-behavior: smooth; 
 }
+
+body {
+  overflow-y: scroll; 
+  margin: 0;
+  padding: 0;
+} */

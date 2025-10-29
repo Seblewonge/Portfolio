@@ -12,6 +12,9 @@ position: relative;
 .about-title h1{
 padding: 0px 30px;
 }
+.sectionTitle{
+padding-top: 5%;
+}
 .about-para p{
 text-align: justify;
 }
