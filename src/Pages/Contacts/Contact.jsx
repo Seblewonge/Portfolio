@@ -37,7 +37,7 @@ const sendEmail = (e) => {
         // hide popup automatically after 3 seconds
         setTimeout(() => {
           setShowPopup(false);
-        }, 1000);
+        }, 3000);
       },
       (error) => {
         console.log("FAILED...", error.text);
