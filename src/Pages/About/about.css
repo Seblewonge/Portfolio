@@ -17,6 +17,7 @@ padding-top: 5%;
 }
 .about-para p{
 text-align: justify;
+font-family:Georgia, 'Times New Roman', Times, serif;
 }
 .container {
   display: flex;
@@ -34,7 +35,27 @@ text-align: justify;
   color: var(--text-color);
   }
 }
+ .about-para {
+ /* or use any color like #007bff */
+  border-radius: 12px;
+  padding: 20px;
+ background-color: var(--background-color);;
+  transition: all 0.3s ease-in-out;
+}
 
+/* Hover effect for a nice transition */
+.about-para:hover {
+  transform: scale(1.02);
+ 
+  border-color: transparent
+}
+
+.about-para p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  text-align: justify;
+}
+ 
 .skillList {
   display: flex;
   justify-content: space-evenly;

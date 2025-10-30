@@ -23,16 +23,16 @@ const sendEmail = (e) => {
 
   emailjs
     .sendForm(
-      "service_g0s2m6c", 
-      "template_zb65kbe", 
+      "service_g0s2m6c",
+      "template_zb65kbe",
       form.current,
-      "wYkEARJ5D6_edOJa_" 
+      "wYkEARJ5D6_edOJa_"
     )
     .then(
       (result) => {
         console.log("SUCCESS!", result.text);
         setShowPopup(true);
-        form.current.reset(); 
+        form.current.reset();
 
         // hide popup automatically after 3 seconds
         setTimeout(() => {
